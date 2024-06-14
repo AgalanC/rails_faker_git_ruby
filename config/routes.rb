@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # I added the line below; this route maps GET requests to "/products" to the "index" action in the "Products" controller
   get 'products', to: 'products#index'
 
+  # I added the line below, route sets up a way to handle requests to URLs like "/products/1" by invoking the "show" action of the "ProductsController". It also provides URL helper methods like "product_path" and "product_url" to easily generate these URLs in your application.
+  get 'products/:id', to: 'products#show', as: 'product'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
