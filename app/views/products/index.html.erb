@@ -1,2 +1,23 @@
+<!-- app/views/products/index.html.erb -->
 <h1>Products#index</h1>
+<%# Code loops through all products in the "@products" array and creates a list item for each, displaying its title, price, stock quantity, and description in a formatted manner. %>
+<ul>
+    <%# Opens the ERB (Embedded Ruby) block, it iterates over the "@products" instance variable, which contains an array of "product" objects. For each "product" in the array, the code within the block will be executed. The "|product|" is a block variable representing the current product in the iteration. %>
+    <% @products.each do |product| %>
+        <li>
+            <!-- Outputs the "title" of the product. <%= product.title %> inserts the title of the current product. -->
+            <strong>Title:</strong> <%= product.title %><br>
+            <!-- Outputs the "price" of the product. <%= number_to_currency(product.price) %> formats the price as currency (e.g., $10.50) -->
+            <strong>Price:</strong> <%= number_to_currency(product.price) %><br>
+            <!-- Outputs the "stock quantity" of the product. <%= product.stock_quantity %> inserts the stock quantity of the current product. -->
+            <strong>Stock Quantity:</strong> <%= product.stock_quantity %><br>
+            <!-- Outputs the "description" of the product. <%= product.description %> inserts the description of the current product. -->
+            <strong>Description:</strong> <%= product.description %>
+        </li>
+        <!-- This inserts a horizontal rule, which is a line that visually separates each product in the list. -->
+        <hr>
+    <!-- This closes the ERB block that was opened by <% @products.each do |product| />, ending the iteration. -->
+    <% end %>
+</ul>
+
 <p>Find me in app/views/products/index.html.erb</p>
