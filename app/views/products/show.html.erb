@@ -3,6 +3,10 @@
 <%# This is an Embedded Ruby (ERB) tag that outputs the value of the "title" attribute of the "@product" instance variable. The "@product" variable is set in the "show" action of the "ProductsController" and contains the details of the specific "product" being viewed. %>
 <h1><%= @product.title %></h1>
 
+<%# Line 8 was added during Part 2: Step 8. %>
+<%# This ERB tag outputs the "name" of the "category" associated with the "@product" instance variable. %>
+<p><strong>Category:</strong> <%= @product.category.name %></p>
+
 <%# This ERB tag outputs the "price" attribute of the "@product" instance variable, formatted as currency using the "number_to_currency" helper method provided by Rails. This ensures the price is displayed in a proper currency format (e.g., $10.50). %>
 <p><strong>Price:</strong> <%= number_to_currency(@product.price) %></p>
 <%# This ERB tag outputs the value of the "stock_quantity" attribute of the "@product" instance variable. %>

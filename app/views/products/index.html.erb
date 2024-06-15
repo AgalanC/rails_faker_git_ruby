@@ -12,6 +12,11 @@
             <%# Line 14 is the modification to line 10 after Step 18. %>
             <%# Use link_to to create a link to the product's show page. %>
             <strong>Title:</strong> <%= link_to product.title, product_path(product) %><br>
+            
+            <%# Line 18 was added during Part 2: Step 8. %>
+            <%# Outputs the category name of the product. %>
+            <strong>Category:</strong> <%= product.category.name %><br>
+            
             <%# Outputs the "price" of the product. <%= number_to_currency(product.price) /> formats the price as currency (e.g., $10.50). %>
             <strong>Price:</strong> <%= number_to_currency(product.price) %><br>
             <%# Outputs the "stock quantity" of the product. <%= product.stock_quantity /> inserts the stock quantity of the current product. %>

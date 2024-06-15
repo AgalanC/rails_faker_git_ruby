@@ -1,4 +1,9 @@
 # app/controllers/products_controller.rb
+
+=begin
+
+*** NOTE *** - Code BEFORE Part 2: Step 9
+
 class ProductsController < ApplicationController
   # index action
   def index
@@ -8,6 +13,28 @@ class ProductsController < ApplicationController
 
   # show action - Displays the details of a single "product". When a user requests a product by its ID (e.g., /products/1), this action retrieves the product with the specified ID from the database and makes it available to the view.
   def show
+    @product = Product.find(params[:id])
+  end
+end
+
+=end
+
+
+
+
+
+# *** NOTE *** - Code AFTER Part 2: Step 9
+
+class ProductsController < ApplicationController
+  # index action
+  def index
+    # Load all "Products" along with their associated "Categories" into an instance variable.
+    @products = Product.includes(:category).all
+  end
+
+  # show action - Displays the details of a single "product". When a user requests a product by its ID (e.g., /products/1), this action retrieves the product with the specified ID from the database and makes it available to the view.
+  def show
+    # Find a product by its ID and load it into an instance variable.
     @product = Product.find(params[:id])
   end
 end
