@@ -10,6 +10,11 @@
 
 
 
+
+# db/seeds.rb
+# Loads the "csv" library to read the CSV file
+require 'csv'
+
 # Loads the "faker" gem/package, which is used to generate fake data for the products.
 require 'faker'
 
