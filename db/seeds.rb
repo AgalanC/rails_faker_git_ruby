@@ -60,11 +60,11 @@ Product.destroy_all
 Category.destroy_all
 
 # Read the CSV file
-csv_file = Rails.root.join('db', 'products.csv')
+csv_file = Rails.root.join('db/products.csv')
 csv_data = File.read(csv_file)
 
 # Parse the CSV data
-products = CSV.parse(csv_data, headers: true)
+products = CSV.parse(csv_data, headers: true, encoding: 'iso-8859-1')
 
 # If CSV was created by Excel in Windows you may also need to set an encoding type:
 # products = CSV.parse(csv_data, headers: true, encoding: 'iso-8859-1')

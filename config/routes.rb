@@ -1,5 +1,8 @@
 # config/routes.rb
 Rails.application.routes.draw do
+  # Setting the default homepage page to the products
+  # root "products#index"
+
   # The line below was the original code before updating the route so that the "Products" controller's index action is triggered from a GET request to "/products".
   # get 'products/index'
 
